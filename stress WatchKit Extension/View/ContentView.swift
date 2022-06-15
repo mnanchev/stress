@@ -4,7 +4,7 @@ import HealthKit
 struct ContentView: View {
     // MARK: - PROPERTY
     private var healthStore = HKHealthStore()
-    let heartRateQuantity = HKUnit(from: "count/min")
+    let heartRateVariability = HKUnit(from: "count/min")
     let decisionTree = DesicionTree(sdnn: 0)
     let color = [
         "darkBlue": Color(red: 0.193, green: 0.360, blue: 0.749),
@@ -54,12 +54,12 @@ struct ContentView: View {
     // MARK: - FUNCTION
     func start() {
         autorizeHealthKit()
-        startHeartRateQuery(quantityTypeIdentifier: .heartRate)
+        startHeartRateQuery(quantityTypeIdentifier: .heartRateVariabilitySDNN)
     }
     
     func autorizeHealthKit() {
         let healthKitTypes: Set = [
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRateVariabilitySDNN)!]
         
         healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { _, _ in }
     }
@@ -92,14 +92,14 @@ struct ContentView: View {
     }
     
     private func process(_ samples: [HKQuantitySample], type: HKQuantityTypeIdentifier) {
-        var lastHeartRate = 0.0
+        var lastHeartRateVariability = 0.0
         
         for sample in samples {
-            if type == .heartRate {
-                lastHeartRate = sample.quantity.doubleValue(for: heartRateQuantity)
+            if type == .heartRateVariabilitySDNN {
+                lastHeartRateVariability = sample.quantity.doubleValue(for: heartRateVariability)
             }
             
-            self.value = Int(lastHeartRate)
+            self.value = Int(lastHeartRateVariability)
         }
     }
     
