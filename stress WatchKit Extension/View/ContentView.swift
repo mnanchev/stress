@@ -5,7 +5,7 @@ struct ContentView: View {
     // MARK: - PROPERTY
     private var healthStore = HKHealthStore()
     let heartRateVariability = HKUnit(from: "count/min")
-    let decisionTree = DesicionTree(sdnn: 0)
+    
     let color = [
         "darkBlue": Color(red: 0.193, green: 0.360, blue: 0.749),
         "lightBlue": Color(red: 0.642, green: 0.788, blue: 1.0),
@@ -13,8 +13,7 @@ struct ContentView: View {
         "lightOrange": Color(red: 0.977, green: 0.813, blue: 0.403),
         "darkOrange": Color(red: 0.972, green: 0.300, blue: 0.203)
     ]
-    @State private var result = 40
-    @State private var value = 20
+    @State private var value:Int = 0
     @State private var minValue = "0"
     @State private var maxValue = "100"
     
@@ -30,13 +29,13 @@ struct ContentView: View {
                 Spacer()
                 
             }
-            Gauge(value: Double(result), in: 0...100) {
+            Gauge(value: Double(value), in: 0...100) {
                 Image(systemName: "drop.fill")
                     .foregroundColor(.red)
             } currentValueLabel: {
                 
-                Text("\(result)").fontWeight(.light)
-                    .foregroundColor(result < 50 ?  color["lightBlue"] : result < 80 ?  color["lightOrange"]: color["darkOrange"])
+                Text("\(value)").fontWeight(.light)
+                    .foregroundColor(value < 50 ?  color["lightBlue"] : value < 80 ?  color["lightOrange"]: color["darkOrange"])
             } minimumValueLabel: {
                 Text(minValue)
                     .foregroundColor(Color.accentColor).fontWeight(.light)
@@ -92,14 +91,14 @@ struct ContentView: View {
     }
     
     private func process(_ samples: [HKQuantitySample], type: HKQuantityTypeIdentifier) {
-        var lastHeartRateVariability = 0.0
-        
+        var result = 0.0
         for sample in samples {
             if type == .heartRateVariabilitySDNN {
-                lastHeartRateVariability = sample.quantity.doubleValue(for: heartRateVariability)
+                let lastHeartRateVariability = sample.quantity.doubleValue(for: heartRateVariability)
+                result = Double(DesicionTree(sdnn: lastHeartRateVariability).getStressLevel())
             }
             
-            self.value = Int(lastHeartRateVariability)
+            self.value = Int(result)
         }
     }
     
