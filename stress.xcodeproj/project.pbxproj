@@ -20,6 +20,8 @@
 		1A3A13902846741000765C5D /* stressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3A138F2846741000765C5D /* stressTests.swift */; };
 		1A3A139A2846741000765C5D /* stressUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3A13992846741000765C5D /* stressUITests.swift */; };
 		1A3A139C2846741000765C5D /* stressUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3A139B2846741000765C5D /* stressUITestsLaunchTests.swift */; };
+		1A3A13B3284675FA00765C5D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3A13B2284675FA00765C5D /* HealthKit.framework */; };
+		1ADF5446284B790F00A82298 /* DecisionTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADF5445284B790F00A82298 /* DecisionTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,9 @@
 		1A3A13952846741000765C5D /* stressUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stressUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3A13992846741000765C5D /* stressUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stressUITests.swift; sourceTree = "<group>"; };
 		1A3A139B2846741000765C5D /* stressUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stressUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1A3A13B0284675FA00765C5D /* stress WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "stress WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		1A3A13B2284675FA00765C5D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		1ADF5445284B790F00A82298 /* DecisionTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A3A13B3284675FA00765C5D /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +138,7 @@
 				1A3A138E2846741000765C5D /* stressTests */,
 				1A3A13982846741000765C5D /* stressUITests */,
 				1A3A13632846740E00765C5D /* Products */,
+				1A3A13B1284675FA00765C5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,8 +165,10 @@
 		1A3A13752846741000765C5D /* stress WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1ADF5448284B798800A82298 /* Model */,
+				1ADF5447284B797400A82298 /* View */,
+				1A3A13B0284675FA00765C5D /* stress WatchKit Extension.entitlements */,
 				1A3A13762846741000765C5D /* stressApp.swift */,
-				1A3A13782846741000765C5D /* ContentView.swift */,
 				1A3A137A2846741000765C5D /* NotificationController.swift */,
 				1A3A137C2846741000765C5D /* NotificationView.swift */,
 				1A3A137E2846741000765C5D /* ComplicationController.swift */,
@@ -194,6 +203,30 @@
 				1A3A139B2846741000765C5D /* stressUITestsLaunchTests.swift */,
 			);
 			path = stressUITests;
+			sourceTree = "<group>";
+		};
+		1A3A13B1284675FA00765C5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A3A13B2284675FA00765C5D /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1ADF5447284B797400A82298 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1A3A13782846741000765C5D /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1ADF5448284B798800A82298 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1ADF5445284B790F00A82298 /* DecisionTree.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +419,7 @@
 				1A3A137B2846741000765C5D /* NotificationController.swift in Sources */,
 				1A3A13792846741000765C5D /* ContentView.swift in Sources */,
 				1A3A137F2846741000765C5D /* ComplicationController.swift in Sources */,
+				1ADF5446284B790F00A82298 /* DecisionTree.swift in Sources */,
 				1A3A13772846741000765C5D /* stressApp.swift in Sources */,
 				1A3A137D2846741000765C5D /* NotificationView.swift in Sources */,
 			);
@@ -552,6 +586,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "stress WatchKit Extension/stress WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"stress WatchKit Extension/Preview Content\"";
@@ -584,6 +619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "stress WatchKit Extension/stress WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"stress WatchKit Extension/Preview Content\"";
