@@ -4,7 +4,7 @@ import HealthKit
 struct ContentView: View {
     // MARK: - PROPERTY
     private var healthStore = HKHealthStore()
-    let heartRateVariability = HKUnit(from: "count/min")
+    let heartRateVariability = HKUnit(from: "ms")
     
     let color = [
         "darkBlue": Color(red: 0.193, green: 0.360, blue: 0.749),
@@ -97,7 +97,7 @@ struct ContentView: View {
                 let lastHeartRateVariability = sample.quantity.doubleValue(for: heartRateVariability)
                 result = Double(DesicionTree(sdnn: lastHeartRateVariability).getStressLevel())
             }
-            
+            print(result)
             self.value = Int(result)
         }
     }

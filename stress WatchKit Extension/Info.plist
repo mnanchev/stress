@@ -2,12 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
-	<string>Health usage needed to measure stress</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Health usage needed to measure stress</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Health usage needed to measure stress</string>
+	<string>To measure stress the app needs to access your heart variability data update</string>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>To measure stress the app needs to access your heart variability data records</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>To measure stress the app needs to access your heart variability data usage</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>

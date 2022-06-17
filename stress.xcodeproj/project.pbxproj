@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A3A13672846740E00765C5D /* stress WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1A3A13662846740E00765C5D /* stress WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1A3A136C2846741000765C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A3A136B2846741000765C5D /* Assets.xcassets */; };
-		1A3A13722846741000765C5D /* stress WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1A3A13712846741000765C5D /* stress WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1A3A13772846741000765C5D /* stressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3A13762846741000765C5D /* stressApp.swift */; };
 		1A3A13792846741000765C5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3A13782846741000765C5D /* ContentView.swift */; };
 		1A3A137B2846741000765C5D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3A137A2846741000765C5D /* NotificationController.swift */; };
@@ -32,20 +31,6 @@
 			remoteGlobalIDString = 1A3A13652846740E00765C5D;
 			remoteInfo = "stress WatchKit App";
 		};
-		1A3A13732846741000765C5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A3A135C2846740E00765C5D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1A3A13702846741000765C5D;
-			remoteInfo = "stress WatchKit Extension";
-		};
-		1A3A138C2846741000765C5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A3A135C2846740E00765C5D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1A3A13702846741000765C5D;
-			remoteInfo = "stress WatchKit Extension";
-		};
 		1A3A13962846741000765C5D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A3A135C2846740E00765C5D /* Project object */;
@@ -56,17 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1A3A13A22846741000765C5D /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				1A3A13722846741000765C5D /* stress WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1A3A13A62846741000765C5D /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,10 +55,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A24D07E285CD8EC00585FD5 /* stress-WatchKit-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "stress-WatchKit-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1A3A13622846740E00765C5D /* stress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3A13662846740E00765C5D /* stress WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "stress WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3A136B2846741000765C5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1A3A13712846741000765C5D /* stress WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "stress WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3A13762846741000765C5D /* stressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stressApp.swift; sourceTree = "<group>"; };
 		1A3A13782846741000765C5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1A3A137A2846741000765C5D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -147,7 +121,6 @@
 			children = (
 				1A3A13622846740E00765C5D /* stress.app */,
 				1A3A13662846740E00765C5D /* stress WatchKit App.app */,
-				1A3A13712846741000765C5D /* stress WatchKit Extension.appex */,
 				1A3A138B2846741000765C5D /* stressTests.xctest */,
 				1A3A13952846741000765C5D /* stressUITests.xctest */,
 			);
@@ -157,6 +130,7 @@
 		1A3A136A2846740E00765C5D /* stress WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				1A24D07E285CD8EC00585FD5 /* stress-WatchKit-App-Info.plist */,
 				1A3A136B2846741000765C5D /* Assets.xcassets */,
 			);
 			path = "stress WatchKit App";
@@ -254,34 +228,17 @@
 			buildConfigurationList = 1A3A13A32846741000765C5D /* Build configuration list for PBXNativeTarget "stress WatchKit App" */;
 			buildPhases = (
 				1A3A13642846740E00765C5D /* Resources */,
-				1A3A13A22846741000765C5D /* Embed App Extensions */,
+				1A3A136D2846741000765C5D /* Sources */,
+				1A3A136E2846741000765C5D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1A3A13742846741000765C5D /* PBXTargetDependency */,
 			);
 			name = "stress WatchKit App";
 			productName = "stress WatchKit App";
 			productReference = 1A3A13662846740E00765C5D /* stress WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		1A3A13702846741000765C5D /* stress WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1A3A139F2846741000765C5D /* Build configuration list for PBXNativeTarget "stress WatchKit Extension" */;
-			buildPhases = (
-				1A3A136D2846741000765C5D /* Sources */,
-				1A3A136E2846741000765C5D /* Frameworks */,
-				1A3A136F2846741000765C5D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "stress WatchKit Extension";
-			productName = "stress WatchKit Extension";
-			productReference = 1A3A13712846741000765C5D /* stress WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
+			productType = "com.apple.product-type.application";
 		};
 		1A3A138A2846741000765C5D /* stressTests */ = {
 			isa = PBXNativeTarget;
@@ -294,7 +251,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1A3A138D2846741000765C5D /* PBXTargetDependency */,
 			);
 			name = stressTests;
 			productName = stressTests;
@@ -327,15 +283,12 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					1A3A13612846740E00765C5D = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					1A3A13652846740E00765C5D = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
-					1A3A13702846741000765C5D = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					1A3A138A2846741000765C5D = {
@@ -363,7 +316,6 @@
 			targets = (
 				1A3A13612846740E00765C5D /* stress */,
 				1A3A13652846740E00765C5D /* stress WatchKit App */,
-				1A3A13702846741000765C5D /* stress WatchKit Extension */,
 				1A3A138A2846741000765C5D /* stressTests */,
 				1A3A13942846741000765C5D /* stressUITests */,
 			);
@@ -382,16 +334,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A3A136C2846741000765C5D /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1A3A136F2846741000765C5D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 				1A3A13842846741000765C5D /* Preview Assets.xcassets in Resources */,
 				1A3A13812846741000765C5D /* Assets.xcassets in Resources */,
+				1A3A136C2846741000765C5D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,16 +394,6 @@
 			isa = PBXTargetDependency;
 			target = 1A3A13652846740E00765C5D /* stress WatchKit App */;
 			targetProxy = 1A3A13682846740E00765C5D /* PBXContainerItemProxy */;
-		};
-		1A3A13742846741000765C5D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1A3A13702846741000765C5D /* stress WatchKit Extension */;
-			targetProxy = 1A3A13732846741000765C5D /* PBXContainerItemProxy */;
-		};
-		1A3A138D2846741000765C5D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1A3A13702846741000765C5D /* stress WatchKit Extension */;
-			targetProxy = 1A3A138C2846741000765C5D /* PBXContainerItemProxy */;
 		};
 		1A3A13972846741000765C5D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -582,85 +517,31 @@
 			};
 			name = Release;
 		};
-		1A3A13A02846741000765C5D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "stress WatchKit Extension/stress WatchKit Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"stress WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = PDBSX82LLP;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "stress WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "stress WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKWatchOnly = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.martinnanchev.stress.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.3;
-			};
-			name = Debug;
-		};
-		1A3A13A12846741000765C5D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "stress WatchKit Extension/stress WatchKit Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"stress WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = PDBSX82LLP;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "stress WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "stress WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKWatchOnly = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.martinnanchev.stress.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.3;
-			};
-			name = Release;
-		};
 		1A3A13A42846741000765C5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "stress WatchKit Extension/stress WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PDBSX82LLP;
 				GENERATE_INFOPLIST_FILE = YES;
-				IBSC_MODULE = stress_WatchKit_Extension;
+				INFOPLIST_FILE = "stress-WatchKit-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "stress WatchKit App";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = stress_WatchKit_App.ComplicationController;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "need to access hrv";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "need to access hrv";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "need to access hrv";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinnanchev.stress.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -678,14 +559,26 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "stress WatchKit Extension/stress WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PDBSX82LLP;
 				GENERATE_INFOPLIST_FILE = YES;
-				IBSC_MODULE = stress_WatchKit_Extension;
+				INFOPLIST_FILE = "stress-WatchKit-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "stress WatchKit App";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = stress_WatchKit_App.ComplicationController;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "need to access hrv";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "need to access hrv";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "need to access hrv";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinnanchev.stress.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -812,15 +705,6 @@
 			buildConfigurations = (
 				1A3A139D2846741000765C5D /* Debug */,
 				1A3A139E2846741000765C5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1A3A139F2846741000765C5D /* Build configuration list for PBXNativeTarget "stress WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1A3A13A02846741000765C5D /* Debug */,
-				1A3A13A12846741000765C5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
