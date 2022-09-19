@@ -529,7 +529,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PDBSX82LLP;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "stress-WatchKit-App-Info.plist";
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_CFBundleDisplayName = "stress WatchKit App";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = stress_WatchKit_App.ComplicationController;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
@@ -566,7 +566,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PDBSX82LLP;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "stress-WatchKit-App-Info.plist";
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_CFBundleDisplayName = "stress WatchKit App";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = stress_WatchKit_App.ComplicationController;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
