@@ -14,9 +14,10 @@ struct ContentView: View {
         "darkOrange": Color(red: 0.972, green: 0.300, blue: 0.203)
     ]
     @State private var value:Int = 0
+    @State private var rmssd:Int = 0
     @State private var minValue = "0"
     @State private var maxValue = "100"
-    
+    @State private var lfHf = 0.0
     // MARK: - BODY
     var body: some View {
         let gradient = Gradient(colors: [color["darkBlue"]!, color["lightBlue"]!, color["lightOrange"]!, color["darkOrange"]!])
@@ -24,7 +25,14 @@ struct ContentView: View {
         VStack{
             HStack{
                 Text("Stress lvl")
-                    .font(.system(size: 30)).foregroundColor(Color.accentColor)
+                    .font(.system(size: 23)).foregroundColor(Color.accentColor)
+                    .fontWeight(.light)
+                Spacer()
+                
+            }
+            HStack{
+                Text("lf/hf: \(String(format: "%.2f", lfHf))  rmssd: \(rmssd)")
+                    .font(.system(size: 20)).foregroundColor(Color.accentColor)
                     .fontWeight(.light)
                 Spacer()
                 
@@ -92,13 +100,18 @@ struct ContentView: View {
     
     private func process(_ samples: [HKQuantitySample], type: HKQuantityTypeIdentifier) {
         var result = 0.0
+        var rmssd = 0.0
+        var lastHeartRateVariability = 0.0
         for sample in samples {
             if type == .heartRateVariabilitySDNN {
-                let lastHeartRateVariability = sample.quantity.doubleValue(for: heartRateVariability)
-                result = Double(DesicionTree(sdnn: lastHeartRateVariability).getStressLevel())
+                lastHeartRateVariability = sample.quantity.doubleValue(for: heartRateVariability)
+                let decisionTree = DesicionTree(sdnn: lastHeartRateVariability)
+                result = Double(decisionTree.getStressLevel())
+                rmssd = Double(decisionTree.getRmssd())
             }
-            print(result)
             self.value = Int(result)
+            self.rmssd = Int(rmssd)
+            self.lfHf = (lastHeartRateVariability/Double(self.rmssd))/0.0941 - 1.593
         }
     }
     
